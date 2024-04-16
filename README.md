@@ -4,7 +4,7 @@
 
 # Pages
 
-## home_page aka just /
+## /home_page aka just /
 - Landing page.
 - Prompts to get a random quote.
 - Button that takes to /gen_quote.

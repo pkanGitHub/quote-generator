@@ -1,6 +1,41 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const mongoose = require("mongoose");
+const { Int32 } = require('mongodb');
+
+const mongoURI = "mongodb://127.0.0.1:27017/latestdb"
+
+    try{
+        mongoose.set('strictQuery', false)
+        mongoose.connect(mongoURI)
+        console.log('Mongo connected')
+    }
+    catch(error){
+        console.log(error)
+        //process.exit()
+    }
+    
+//////////////////////////////////
+/// BASIC SCHEMA OF THE PROJECT //
+//////////////////////////////////
+const QuotesSchema = {
+        id: Number,
+        quote: String,
+        author: String,
+        topic: String,
+    };
+    
+const Quotes = mongoose.model("Contact", QuotesSchema);
+const newData = new Quotes({
+    id: 1,
+    quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    author: "Nelson Mandela",
+    topic: "inspirational"
+})
+const schemaDefinition = Quotes.schema.obj;
+console.log(schemaDefinition);
+      
 
 const app = express();
 
@@ -58,4 +93,16 @@ app.use('/request-type', (req, res, next) => {
   });
   
   
+/*
+
+newData.save()
+.then(savedData => {
+    console.log('Data saved successfully:', savedData);
+})
+*/
+
+Quotes.find()
+    .then(data => {
+        console.log('Retrieved data:', data);
+    })
 module.exports = app;

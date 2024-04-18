@@ -7,7 +7,7 @@ import { QuoteListComponent } from './quote-list/quote-list.component';
 import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
-    {path: '', component: AppComponent, pathMatch: "full"},
+    {path: '', redirectTo: '/', pathMatch: 'full'},
     {path: 'add-quote', component: AddQuoteComponent},
     {path: 'generate-quote', component: GenQuoteComponent},
     {path: 'quote-list', component: QuoteListComponent},

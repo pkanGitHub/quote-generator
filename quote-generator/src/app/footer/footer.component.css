@@ -1,0 +1,27 @@
+.footer {
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: #eee;
+    display: flex; 
+    justify-content: space-between; /* Align items to the start and end of the container */
+    align-items: center; 
+    padding: 3px 15px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer .project-by {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.by-year {
+    display: block;
+    color: black; /* Example link color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-left: auto;
+}

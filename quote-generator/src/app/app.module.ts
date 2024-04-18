@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 
 import { HomeComponent } from "./home/home.component";

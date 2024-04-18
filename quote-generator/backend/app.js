@@ -27,12 +27,7 @@ const QuotesSchema = {
     };
     
 const Quotes = mongoose.model("Contact", QuotesSchema);
-const newData = new Quotes({
-    id: 1,
-    quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-    author: "Nelson Mandela",
-    topic: "inspirational"
-})
+
 const schemaDefinition = Quotes.schema.obj;
 console.log(schemaDefinition);
       
@@ -92,14 +87,20 @@ app.use('/request-type', (req, res, next) => {
   
   });
   
-  
-/*
+
+  const newData = new Quotes({
+    id: 2,
+    quote: "The way to get started is to quit talking and begin doing.",
+    author: "Walt Disney",
+    topic: "inspirational"
+})
+
 
 newData.save()
 .then(savedData => {
     console.log('Data saved successfully:', savedData);
 })
-*/
+
 
 Quotes.find()
     .then(data => {

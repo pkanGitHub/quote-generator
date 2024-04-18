@@ -1,0 +1,20 @@
+/* Styles for the quote list */
+.quote-list {
+  width: 80%;        /* Set the width to 80% of the viewport width */
+  margin: 0 auto;    /* Center the list horizontally */
+  list-style: none;  /* Remove default list styling */
+  padding: 0;        /* Remove default padding */
+}
+
+.quote-item {
+  text-align: center; /* Center align the text */
+  margin-bottom: 20px; /* Space between quotes */
+}
+
+.quote-text {
+  color: black; /* Set the text color to black */
+}
+
+.quote-author {
+  color: grey; /* Set the author's name to grey */
+}

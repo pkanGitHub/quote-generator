@@ -10,6 +10,8 @@ import { AboutComponent } from "./about/about.component";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -22,7 +24,8 @@ import { FooterComponent } from "./footer/footer.component";
         
     ],
     imports: [
-        FormsModule
+        FormsModule,
+        MatButtonModule
     ],
     bootstrap: [AppComponent]
 })

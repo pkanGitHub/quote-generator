@@ -1,0 +1,31 @@
+* {
+    font-family: monospace;
+}
+
+#box {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#quote {
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+#author {
+    font-size: 25px;
+}
+
+#topic {
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+button {
+    font-weight: bold;
+}

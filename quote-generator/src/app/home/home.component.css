@@ -1,0 +1,20 @@
+#box {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#quote {
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+button {
+    font-family: monospace;
+    font-weight: bold;
+}

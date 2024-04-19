@@ -1,7 +1,3 @@
-* {
-    font-family: monospace;
-}
-
 #box {
     text-align: center;
     margin: 0;
@@ -12,21 +8,14 @@
 }
 
 #quote {
+    padding-bottom: 20px;
     font-size: 40px;
+    font-family: monospace;
     font-weight: bold;
-    padding-bottom: 25px;
     line-height: 40px;
 }
 
-#author {
-    font-size: 25px;
-}
-
-#topic {
-    font-size: 20px;
-    padding-bottom: 30px;
-}
-
 button {
+    font-family: monospace;
     font-weight: bold;
 }

@@ -1,0 +1,31 @@
+.navbar {
+    background-color: #fff; /* Example background color */
+    overflow: hidden;
+    display: flex; 
+    justify-content: space-between; /* Align items to the start and end of the container */
+    align-items: center; 
+  }
+
+  .navbar .logo img {
+    width: 150px;
+    height: auto; 
+  }
+  
+  .navbar .navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar .navbar-links {
+    margin-left: auto;
+  }
+  
+  .navbar .navbar-links li a {
+    display: block;
+    color: black; /* Example link color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }

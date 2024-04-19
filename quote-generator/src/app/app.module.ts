@@ -1,7 +1,10 @@
 import { NgModule } from "@angular/core";
+import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component";
 import { FormsModule} from '@angular/forms';
 
+
+import { HomeComponent } from "./home/home.component";
 import { AddQuoteComponent } from "./add-quote/add-quote.component";
 import { GenQuoteComponent } from "./gen-quote/gen-quote.component";
 import { QuoteListComponent } from "./quote-list/quote-list.component";
@@ -13,6 +16,7 @@ import { FooterComponent } from "./footer/footer.component";
 @NgModule({
     declarations: [
         AppComponent,
+        HomeComponent,
         AddQuoteComponent,
         GenQuoteComponent,
         QuoteListComponent,
@@ -22,7 +26,9 @@ import { FooterComponent } from "./footer/footer.component";
         
     ],
     imports: [
-        FormsModule
+        AppRoutingModule,
+        FormsModule,
+
     ],
     bootstrap: [AppComponent]
 })

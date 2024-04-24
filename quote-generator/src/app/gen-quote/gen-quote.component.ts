@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuoteGetterService } from '../quote-getter.service';
+import { QuoteGetterServicee } from '../quote-getter.service';
 import { Output, EventEmitter, inject, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +7,15 @@ import { Output, EventEmitter, inject, OnInit } from '@angular/core';
   templateUrl: './gen-quote.component.html',
   styleUrl: './gen-quote.component.css'
 })
+//let msg;
 export class GenQuoteComponent {
-  private quoteGetter = inject(QuoteGetterService)
+  msg: string;
+  constructor() {}
+  private quoteGetter = inject(QuoteGetterServicee)
+  yourmom() {
+    this.msg = "yourmom";
+    console.log("PLEASEEEEE")
+    return this.msg;
+  }
+  
 }

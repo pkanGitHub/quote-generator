@@ -1,0 +1,13 @@
+.profile-container {
+    height: 120vh; /* Take up full height of viewport */
+    width: 100%; /* Take up full width */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align cards in the center horizontally */
+}

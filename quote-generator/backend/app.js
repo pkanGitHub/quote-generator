@@ -30,7 +30,7 @@ async function run() {
         
         
       disquotes = await collection.find({}).toArray(function(err, quotes) {if (err) {console.error('Error occurred while fetching quotes:', err);return;}console.log('All quotes:');console.log(quotes);});
-      //console.log(disquotes)
+      console.log(disquotes)
       db = JSON.stringify(disquotes)
       posties.push(disquotes)
         //db.collection.find()
@@ -85,7 +85,9 @@ app.use((req, res, next) => {
 ////////////////////////////////////////////
 app.get('/data', (req, res) => {
   //objj = run()
-  res.json(posties);
+  //var PushedDb =JSON.stringify (posties)
+  //res.json(PushedDb);
+  res.json(posties)
   //console.log(posties)
   for( post in posties)
   {
@@ -97,7 +99,7 @@ app.get('/data', (req, res) => {
   catch{
     console.log("data sent")
   }
-  
+  //res.send(posties);
   
   //return
   //res.console.log(typeof(db));

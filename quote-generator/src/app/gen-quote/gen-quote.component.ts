@@ -9,26 +9,30 @@ import { Output, EventEmitter, inject, OnInit } from '@angular/core';
 })
 //let msg;
 export class GenQuoteComponent {
-  msg: string;
+  msg;
   
-  constructor() {}
-  //private quoteGetter = inject(QuoteGetterServicee)
+  //constructor() {}
+  onClick() {
+    console.log('Button clicked');
+    
+  }
+  private quoteGetter = inject(QuoteGetterServicee)
   
-  // loadPosts(){
-  //   this.quoteGetter.getPosts().subscribe({
-  //     next: (posts: any) => {
-  //       this.msg = posts;
-  //       console.log("HEYYYY ITS HERE CURR POST IS HERE",this.ms)
-  //       posts.push(this.msg)
+  loadPosts(){
+    this.quoteGetter.getPosts().subscribe({
+      next: (posts: string) => {
+        this.msg = posts;
+        console.log("HEYYYY ITS HERE CURR POST IS HERE",this.msg)
+        //posts.push(this.msg)
         
-  //       console.log("Posts fetched successfully")
-  //     },
-  //    error: (error) => console.log('Error fetching posts', error)
-  //   })
-  // }
+        console.log("Posts fetched successfully")
+      },
+     error: (error) => console.log('Error fetching posts', error)
+    })
+  }
   yourmom() {
     this.msg = "yourmom";
-    console.log("PLEASEEEEE")
+    //console.log("PLEASEEEEE")
     ///this.quoteGetter
     return this.msg;
   }

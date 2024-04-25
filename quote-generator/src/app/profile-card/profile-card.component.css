@@ -1,12 +1,11 @@
 .profile-card {
     display: flex;
-    width: 80%;
+    width: 85%;
     border: 1px solid #ccc;
     border-radius: 8px;
     align-items: center;
     padding: 20px;
-    margin-left: 10%;
-    margin-bottom: 20px;
+    margin: 0 50px 5%;
 }
 
 .profile-card img {

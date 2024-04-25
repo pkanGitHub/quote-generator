@@ -1,13 +1,19 @@
 .profile-container {
-    height: 140vh; /* Take up full height of viewport */
-    width: 100%; /* Take up full width */
+    height: 100vh; /* Full Height in vh */
+    width: 100%; /* Full width */
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 25%;
 }
 
 .profile-column {
+    /* To ensure profile boxes will not move when window size changes */
+    position: absolute;
+    top: 150px;
+
+    /* Align cards in the center horizontally */
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Align cards in the center horizontally */
 }

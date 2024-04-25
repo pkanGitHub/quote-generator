@@ -7,14 +7,6 @@
     padding: 20px;
     margin-left: 10%;
     margin-bottom: 20px;
-
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.profile-card:hover::before {
-    transform: translateX(5px) translateY(5px); /* Move the border */
 }
 
 .profile-card img {

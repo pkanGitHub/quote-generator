@@ -1,9 +1,9 @@
-<div class="profile-card">
+<div *ngFor="let member of members" class="profile-card" [@fadeIn]>
     <div class="profile-img">
-        <img [src]="imageUrl" alt="Profile Picture">
+        <img [src]="member.imageUrl" alt="Profile Picture">
     </div>
     <div class="profile-info">
-        <h2>{{ name }}</h2>
-        <p>{{ bio }}</p>
+        <h2>{{ member.name }}</h2>
+        <p>{{ member.bio }}</p>
     </div>
 </div>

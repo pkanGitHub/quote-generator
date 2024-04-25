@@ -1,5 +1,5 @@
 .profile-container {
-    height: 120vh; /* Take up full height of viewport */
+    height: 140vh; /* Take up full height of viewport */
     width: 100%; /* Take up full width */
     display: flex;
     justify-content: center; /* Center content horizontally */

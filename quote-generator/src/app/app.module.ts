@@ -4,7 +4,7 @@ import { AppComponent } from "./app.component";
 import { FormsModule} from '@angular/forms';
 import { BrowserModule } from "@angular/platform-browser";
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from "./home/home.component";
 import { AddQuoteComponent } from "./add-quote/add-quote.component";
 import { GenQuoteComponent } from "./gen-quote/gen-quote.component";
@@ -34,7 +34,8 @@ import { MatButtonModule } from "@angular/material/button"
         AppRoutingModule,
         FormsModule,
         MatButtonModule,
-        BrowserModule
+        BrowserModule,
+        HttpClientModule
     ],
     bootstrap: [AppComponent]
 })

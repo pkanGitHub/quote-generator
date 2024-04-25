@@ -1,20 +1,16 @@
-#box {
-    text-align: center;
+html, body {
+    height: 100%;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  }
+
+main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-#quote {
-    padding-bottom: 20px;
-    font-size: 40px;
-    font-family: monospace;
-    font-weight: bold;
+.content {
+    flex: 1;
 }
 
-button {
-    font-family: monospace;
-    font-weight: bold;
-}
+

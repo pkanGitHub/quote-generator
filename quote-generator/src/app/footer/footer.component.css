@@ -1,0 +1,23 @@
+.footer {
+    background: #eee;
+    display: flex; 
+    align-items: center; 
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer .project-by {
+    margin: 0;
+    padding: 0;
+    padding: 3px 15px;
+    display: flex;
+}
+
+.footer .by-year {
+    display: block;
+    color: black; /* Example text color */
+    padding: 3px 15px;
+    margin-left: auto;
+}
+

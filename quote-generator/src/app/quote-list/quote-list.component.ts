@@ -15,11 +15,11 @@ export class QuoteListComponent {
        console.log()
        
        //const realposts = JSON.stringify(posts[0][0])
-       const Postquote =JSON.stringify(posts[0][0])
+       const Postquote =JSON.stringify(posts[0])
        const turnback = JSON.parse(Postquote)
        
        
-        this.msg = turnback.quote + " Author:" + turnback.author + " Topic:" + turnback.topic
+        this.msg = turnback
         
         
       },

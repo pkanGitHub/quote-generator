@@ -9,6 +9,9 @@ import { QuoteGetterServicee } from 'app/quote-getter.service';
 export class QuoteListComponent {
   private quoteGetter = inject(QuoteGetterServicee)
   msg;
+  TheList;
+  //list;
+  
   loadPosts(){
     this.quoteGetter.getPosts().subscribe({
       next: (posts : string) => {
@@ -19,7 +22,27 @@ export class QuoteListComponent {
        const turnback = JSON.parse(Postquote)
        
        
-        this.msg = turnback
+      
+       
+       var i = 0;
+       var list
+       
+       turnback.forEach(function (arrayItem) {
+
+        const Postquotey =JSON.stringify(posts[0][i])
+        const turnbacky = JSON.parse(Postquotey)
+        list += turnbacky.quote + "\n"+ turnbacky.author + "\n"+ turnbacky.topic+ "\n \n\n\n\n\n"
+        i+=1
+
+       });
+        
+        
+        
+        //this.msg = turn.quote
+        //list.replace("undefined", "");
+        var newlist = list.substring(9,list.length)
+       
+        this.msg = newlist
         
         
       },

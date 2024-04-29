@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuoteGetterService } from '../quote-getter.service';
+import { QuoteGetterServicee } from '../quote-getter.service';
 import { Output, EventEmitter, inject, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +7,34 @@ import { Output, EventEmitter, inject, OnInit } from '@angular/core';
   templateUrl: './gen-quote.component.html',
   styleUrl: './gen-quote.component.css'
 })
+//let msg;
 export class GenQuoteComponent {
-  private quoteGetter = inject(QuoteGetterService)
+  msg;
+  
+  //constructor() {}
+  onClick() {
+    console.log('Button clicked');
+    
+  }
+  private quoteGetter = inject(QuoteGetterServicee)
+  
+  loadPosts(){
+    this.quoteGetter.getPosts().subscribe({
+      next: (posts: string) => {
+        this.msg = posts;
+        console.log("HEYYYY ITS HERE CURR POST IS HERE",this.msg)
+        //posts.push(this.msg)
+        
+        console.log("Posts fetched successfully")
+      },
+     error: (error) => console.log('Error fetching posts', error)
+    })
+  }
+  yourmom() {
+    this.msg = "yourmom";
+    //console.log("PLEASEEEEE")
+    ///this.quoteGetter
+    return this.msg;
+  }
+  
 }

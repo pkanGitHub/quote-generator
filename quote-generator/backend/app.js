@@ -16,7 +16,8 @@ const uri = "mongodb://localhost:27017";
 
 // Create a new MongoClient
 const client = new MongoClient(mongoURI);
-
+posties = []
+var disquotes;
 async function run() {
     try {
         // Connect the client to the server
@@ -30,6 +31,8 @@ async function run() {
         
       disquotes = await collection.find({}).toArray(function(err, quotes) {if (err) {console.error('Error occurred while fetching quotes:', err);return;}console.log('All quotes:');console.log(quotes);});
       console.log(disquotes)
+      db = JSON.stringify(disquotes)
+      posties.push(disquotes)
         //db.collection.find()
     } finally {
         // Ensures that the client will close when you finish/error
@@ -53,14 +56,14 @@ const QuotesSchema = {
 const Quotes = mongoose.model("Contact", QuotesSchema);
 
 const schemaDefinition = Quotes.schema.obj;
-console.log(schemaDefinition);
+//console.log(schemaDefinition);
       
 
 const app = express();
 
 let obj ={"firstName":"John", "lastName":"Doe"}
-posties = []
-posties.push({content:"Hey dev post here", id:1})
+
+//posties.push({content:"Hey dev post here", id:1})
 app.use(cors(
   {
     
@@ -81,9 +84,25 @@ app.use((req, res, next) => {
 ////// This sends out data for a test  /////
 ////////////////////////////////////////////
 app.get('/data', (req, res) => {
-  res.json(posties);
-  //next();
-  //res.console.log(obj);
+  //objj = run()
+  //var PushedDb =JSON.stringify (posties)
+  //res.json(PushedDb);
+  res.json(posties)
+  //console.log(posties)
+  for( post in posties)
+  {
+    console.log("POST", post)
+  }
+  try{
+    res.send(JSON.stringify(posties[0]))
+  }
+  catch{
+    console.log("data sent")
+  }
+  //res.send(posties);
+  
+  //return
+  //res.console.log(typeof(db));
 
 });
 
@@ -93,7 +112,7 @@ app.get('/data', (req, res) => {
 
 
 app.post('/data2', (req, res) =>{
-  res.send(req.body)
+  res.send(posties)
   posties.push(req.body)
   console.log(posties)
 })

@@ -1,0 +1,11 @@
+<ul class="profiles" [@fadeIn]="members.length">
+    <li *ngFor="let member of members" class="profile-card">
+        <div class="profile-img">
+            <img [src]="member.imageUrl" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h2>{{ member.name }}</h2>
+            <p>{{ member.bio }}</p>
+        </div>
+    </li>
+</ul>

@@ -1,4 +1,75 @@
+<!---
 <p>add-quote works!</p>
 <form>
     <input name="one" ngModel> 
  </form>
+-->
+<h1>Add Your Quote</h1>
+<form #quoteForm="ngForm" (ngSubmit)="onSubmit(quoteForm)">
+  
+  <!-- Input for the quote -->
+  <div class="form-group">
+    <label for="quote">Quote:</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="quote" 
+      name="quote" 
+      [(ngModel)]="quote.text" 
+      required
+    >
+  </div>
+
+  <!-- Input for the author's name -->
+  <div class="form-group">
+    <label for="author">Your Name:</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="author" 
+      name="author" 
+      [(ngModel)]="quote.author" 
+      required
+    >
+  </div>
+
+  <!-- Dropdown for the quote topic -->
+  <div class="form-group">
+    <label for="topic">Topic:</label>
+    <select 
+      class="form-control" 
+      id="topic" 
+      name="topic" 
+      [(ngModel)]="quote.topic" 
+      required
+    >
+      <option value="" disabled selected>Select a topic</option>
+      <option value="inspirational">Inspirational</option>
+      <option value="funny">Funny</option>
+      <option value="depressing">Depressing</option>
+      <option value="love">Love</option>
+    </select>
+  </div>
+
+  <!-- Submit button -->
+  <button 
+    type="submit" 
+    class="btn btn-primary" 
+    
+  >
+    Add Quote
+  </button>
+
+</form>
+
+<!-- Success Message -->
+<div *ngIf="message" class="alert alert-success">
+  {{ message }}
+</div>
+
+<!-- Error Message -->
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+

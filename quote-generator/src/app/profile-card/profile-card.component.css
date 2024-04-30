@@ -1,5 +1,6 @@
 .profile-card {
     display: flex;
+    position: relative;
     width: 85%;
     border: 1px solid #ccc;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
@@ -23,5 +24,5 @@
 }
 
 h2 {
- font-size: large;
+ font-size: 20px;
 }

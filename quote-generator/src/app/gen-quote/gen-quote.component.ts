@@ -11,7 +11,6 @@ import queryString from 'querystring';
 })
 //let msg;
 export class GenQuoteComponent {
-  msg;
   randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
@@ -25,7 +24,13 @@ export class GenQuoteComponent {
     const rndInt = this.randomIntFromInterval(1, 33);
     return rndInt;
   }
+
   private quoteGetter = inject(QuoteGetterServicee)
+  
+  // add default message
+  msg: string = "Click Here For A Random Quote!";
+  author: string = "Author";
+  topic: string = "Topic";
   
   loadPosts(){
     this.quoteGetter.getPosts().subscribe({
@@ -36,14 +41,18 @@ export class GenQuoteComponent {
        const Postquote =JSON.stringify(posts[0][RandNum])
        const turnback = JSON.parse(Postquote)
        
-       
-        this.msg = turnback.quote + " Author:" + turnback.author + " Topic:" + turnback.topic
+      
+        // this.msg = turnback.quote + " Author:" + turnback.author + " Topic:" + turnback.topic
+        this.msg = turnback.quote 
+        this.author =  turnback.author
+        this.topic = turnback.topic
         
         
       },
      error: (error) => console.log('Error fetching posts', error)
     })
   }
+
   yourmom() {
     this.msg = "yourmom";
     //console.log("PLEASEEEEE")

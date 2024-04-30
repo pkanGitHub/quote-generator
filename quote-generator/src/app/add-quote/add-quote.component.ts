@@ -1,9 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { inject } from '@angular/core';
 import { QuoteGetterServicee } from 'app/quote-getter.service';
-import {NgForm} from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-import { join } from 'path';
+import { NgForm } from '@angular/forms';
 import { QuoteData } from 'app/quote-data';
 @Component({
   selector: 'app-add-quote',

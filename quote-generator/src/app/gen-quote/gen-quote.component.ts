@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { QuoteGetterServicee } from '../quote-getter.service';
-import { Output, EventEmitter, inject, OnInit } from '@angular/core';
-import queryString from 'querystring';
+import { inject} from '@angular/core';
 
 
 @Component({

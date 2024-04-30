@@ -1,7 +1,6 @@
 import { Injectable,inject } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 //import { Post} from './post';
-import { Observable } from 'rxjs';
 const BASE_URL = 'http://localhost:3000/data'
 const SEND_URL = 'http://localhost:3000/data2'
 @Injectable({

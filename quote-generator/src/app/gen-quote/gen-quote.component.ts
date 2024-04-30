@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { QuoteGetterServicee } from '../quote-getter.service';
 import { Output, EventEmitter, inject, OnInit } from '@angular/core';
+import queryString from 'querystring';
+
 
 @Component({
   selector: 'app-gen-quote',
@@ -10,22 +12,34 @@ import { Output, EventEmitter, inject, OnInit } from '@angular/core';
 //let msg;
 export class GenQuoteComponent {
   msg;
+  randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
   
   //constructor() {}
   onClick() {
     console.log('Button clicked');
     
   }
+  oneInFour(){
+    const rndInt = this.randomIntFromInterval(1, 33);
+    return rndInt;
+  }
   private quoteGetter = inject(QuoteGetterServicee)
   
   loadPosts(){
     this.quoteGetter.getPosts().subscribe({
-      next: (posts: string) => {
-        this.msg = posts;
-        console.log("HEYYYY ITS HERE CURR POST IS HERE",this.msg)
-        //posts.push(this.msg)
+      next: (posts : string) => {
+       console.log()
+       const RandNum = this.randomIntFromInterval(0 ,posts[0].length-1)
+       const realposts = JSON.stringify(posts[0][RandNum])
+       const Postquote =JSON.stringify(posts[0][RandNum])
+       const turnback = JSON.parse(Postquote)
+       
+       
+        this.msg = turnback.quote + " Author:" + turnback.author + " Topic:" + turnback.topic
         
-        console.log("Posts fetched successfully")
+        
       },
      error: (error) => console.log('Error fetching posts', error)
     })

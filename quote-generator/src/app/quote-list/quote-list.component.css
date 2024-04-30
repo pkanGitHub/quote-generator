@@ -21,6 +21,10 @@ h1 {
   color: black; /* Set the text color to black */
 }
 
-.quote-author {
+.author-text {
   color: grey; /* Set the author's name to grey */
+}
+
+.topic-text {
+  color: lightgray;
 }

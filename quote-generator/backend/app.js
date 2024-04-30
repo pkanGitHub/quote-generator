@@ -10,6 +10,8 @@ const { Int32 } = require('mongodb');
 const mongoURI = "mongodb+srv://user-cool:stellaiscool@quotes.gl9jofc.mongodb.net/?retryWrites=true&w=majority";
 var db;
 const { MongoClient } = require('mongodb');
+const { error } = require('console');
+mongoose.connect(mongoURI)
 
 // Connection URI
 const uri = "mongodb://localhost:27017";
@@ -18,10 +20,11 @@ const uri = "mongodb://localhost:27017";
 const client = new MongoClient(mongoURI);
 posties = []
 var disquotes;
+
 async function run() {
     try {
         // Connect the client to the server
-        await client.connect();
+        await client.connect().catch(console.log("BRUH"));
 
         // Select the database and collection
         const database = client.db("Quote_Generator");
@@ -39,6 +42,35 @@ async function run() {
         await client.close();
     }
 }
+async function postdata(newData){
+    posties[0].push(newData)
+    
+    const newestData = new Quotes({   
+    
+    id: posties.length+1,
+    quote: newData.quote,
+    author: newData.author,
+    topic: newData.topic})
+
+  ////console.log(JSON.stringify(newestData))
+  //newestData.id = posties.length+1
+  try{
+    await client.connect(() => {
+      const database = client.db("Quote_Generator");
+      const collection = database.collection("Quotes");
+      db.collection.insertOne(newestData);
+      console.log("WE IN THE CLINET BBY")
+    })
+    disquotes = await collection.insertOne(newestData);
+    
+    newestData.save().then(savedData => {
+      console.log('Data saved successfully:', savedData)})
+  }
+  catch(e){
+    console.log(e)
+  }
+
+}
 const database = client.db("Quote_Generator");
 const collection = database.collection("Quotes");
 
@@ -47,6 +79,7 @@ run().catch(console.dir);
 /// BASIC SCHEMA OF THE PROJECT //
 //////////////////////////////////
 const QuotesSchema = {
+       
         id: Number,
         quote: String,
         author: String,
@@ -112,9 +145,11 @@ app.get('/data', (req, res) => {
 
 
 app.post('/data2', (req, res) =>{
+  console.log("ABOUT TO POST DATA" + req.body)
   res.send(posties)
-  posties.push(req.body)
-  console.log(posties)
+  postdata(req.body)
+ 
+  console.log(req.body)
 })
 
 

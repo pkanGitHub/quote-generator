@@ -47,7 +47,7 @@ async function postdata(newData){
     
     const newestData = new Quotes({   
     
-    id: posties.length+1,
+    id: posties[0].length+1,
     quote: newData.quote,
     author: newData.author,
     topic: newData.topic})

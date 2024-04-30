@@ -11,15 +11,23 @@ import { fadeIn } from 'app/animation';
 })
 export class ProfileCardComponent {
   members = [
-    { name: 'Maya B', imageUrl: 'assets/Phyllis.jpg', bio: 'Modify here' },
-    { name: 'Stella C', imageUrl: 'assets/Phyllis.jpg', bio: 'Modify here' },
     { 
-      name: 'Phyllis K', 
-      imageUrl: 'assets/Phyllis.jpg', 
-      bio: 'is a senior in Information Technology at University of Missouri. She is known as ferret whisperer among her friends. She used to have a business of ferrets, but currently she only has a cat. Mochi is a smart kitty, she learns to play fetch and use pet buttons. Both Phyllis and Mochi loves to play with ferrets.'
+      name: 'Maya Bowman', 
+      imageUrl: 'assets/Maya.jpg', 
+      bio: 'is a Junior majoring in Computer Science at Mizzou. They work part-time as a data engineer. In their free time they like to play video games and are currently playing Subnautica. Her goal is to graduate with good grades' 
     },
-    { name: 'Michael S', imageUrl: 'assets/Phyllis.jpg', bio: 'Modify here' },
-    { name: 'Upasana R', imageUrl: 'assets/Phyllis.jpg', bio: 'Modify here' },
+    { 
+      name: 'Stella Craig', 
+      imageUrl: 'assets/Stella.jpg', 
+      bio: 'is a Junior in Computer Science at Mizzou. They are also the Secretary of MCA and the head of marketing for TigerHacks. They love to play video games and read in their free time. Her goal is to one day own their own indie game development company.' 
+    },
+    { 
+      name: 'Phyllis Kan', 
+      imageUrl: 'assets/Phyllis.jpg', 
+      bio: 'is a senior in Information Technology at University of Missouri. She graduated from a coding bootcamp for software engineering prior going to Mizzou. She recently find interest in cyber security and looking to learn more about it. Her goal is to live in a stable place with her furry friends and works at the place she enjoys.'
+    },
+    { name: 'Michael Sturm', imageUrl: 'assets/Michael.png', bio: 'is in Information Technology major at Mizzou. He is interest in Nicehe programming topics' },
+    { name: 'Upasana Roy', imageUrl: 'assets/Upasana.jpg', bio: 'is a Computer Science Masters at Mizzou with an interest in harnessing the power of AI in material and chemical sciences.' },
   ];
 
 }

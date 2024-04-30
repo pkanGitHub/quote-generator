@@ -11,7 +11,10 @@ import queryString from 'querystring';
 })
 //let msg;
 export class GenQuoteComponent {
-  msg;
+  quote;
+  author;
+  topic;
+
   randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
@@ -32,23 +35,18 @@ export class GenQuoteComponent {
       next: (posts : string) => {
        console.log()
        const RandNum = this.randomIntFromInterval(0 ,posts[0].length-1)
-       const realposts = JSON.stringify(posts[0][RandNum])
        const Postquote =JSON.stringify(posts[0][RandNum])
        const turnback = JSON.parse(Postquote)
        
        
-        this.msg = turnback.quote + " Author:" + turnback.author + " Topic:" + turnback.topic
         
+        this.quote = turnback.quote
+        this.author = turnback.author
+        this.topic = turnback.topic
         
       },
      error: (error) => console.log('Error fetching posts', error)
     })
-  }
-  yourmom() {
-    this.msg = "yourmom";
-    //console.log("PLEASEEEEE")
-    ///this.quoteGetter
-    return this.msg;
   }
   
 }

@@ -1,18 +1,16 @@
 <div id="box">
     <p id="quote">
-        Click Here For A Random Quote!
+        Quote: {{quote}}
     </p>
 
     <p id="author">
-        Author
+        Author: {{author}}
     </p>
 
     <p id="topic">
-        Topic
+        Topic: {{topic}}
     </p>
 
-    <button (click)="loadPosts()">Quote Meeeeeeeee!</button>
+    <button mat-stroked-button color="primary" (click)="loadPosts()">Quote Meeeeeeeee!</button>
     
-    <h2>{{msg}}</h2>
-
 </div>

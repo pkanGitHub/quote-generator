@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { inject } from '@angular/core';
 import { QuoteGetterServicee } from 'app/quote-getter.service';
 @Component({
@@ -6,47 +7,63 @@ import { QuoteGetterServicee } from 'app/quote-getter.service';
   templateUrl: './quote-list.component.html',
   styleUrl: './quote-list.component.css'
 })
-export class QuoteListComponent {
+
+
+// export class QuoteListComponent implements OnInit {
+//   msg: string | null = null;
+
+//   private quoteGetter = inject(QuoteGetterServicee)
+//   ;
+//   TheList;
+
+//   ngOnInit() {
+//     this.loadPosts();
+//   }
+
+//   loadPosts() {
+//     this.quoteGetter.getPosts().subscribe({
+//       next: (posts: any) => {
+//         let list = "";
+//         posts[0].forEach((item: any, index: number) => {
+//           list += `${item.quote}\n${item.author}\n${item.topic}\n\n`;
+//         });
+//         this.msg = list.length > 0 ? list.trim() : "No quotes available.";
+//       },
+//       error: (error) => {
+//         console.error('Error fetching posts', error);
+//         this.msg = "Failed to load quotes.";
+//       }
+//     });
+//   }
+// }
+
+
+export class QuoteListComponent implements OnInit {
+  msg: string | null = null;
+  quoteList: { quote: string, author: string, topic: string }[] = [];
+
   private quoteGetter = inject(QuoteGetterServicee)
-  msg;
+  ;
   TheList;
-  //list;
-  
-  loadPosts(){
+
+  ngOnInit() {
+    this.loadPosts();
+  }
+
+  loadPosts() {
     this.quoteGetter.getPosts().subscribe({
-      next: (posts : string) => {
-       console.log()
-       
-       //const realposts = JSON.stringify(posts[0][0])
-       const Postquote =JSON.stringify(posts[0])
-       const turnback = JSON.parse(Postquote)
-       
-       
-      
-       
-       var i = 0;
-       var list
-       
-       turnback.forEach(function (arrayItem) {
-
-        const Postquotey =JSON.stringify(posts[0][i])
-        const turnbacky = JSON.parse(Postquotey)
-        list += turnbacky.quote + "\n"+ turnbacky.author + "\n"+ turnbacky.topic+ "\n \n\n\n\n\n"
-        i+=1
-
-       });
-        
-        
-        
-        //this.msg = turn.quote
-        //list.replace("undefined", "");
-        var newlist = list.substring(9,list.length)
-       
-        this.msg = newlist
-        
-        
+      next: (posts: any) => {
+        this.quoteList = posts[0].map((item: any) => ({
+          quote: item.quote,
+          author: item.author,
+          topic: item.topic
+        }));
+        this.msg = this.quoteList.length > 0 ? "Quotes loaded successfully." : "No quotes available.";
       },
-     error: (error) => console.log('Error fetching posts', error)
-    })
+      error: (error) => {
+        console.error('Error fetching posts', error);
+        this.msg = "Failed to load quotes.";
+      }
+    });
   }
 }

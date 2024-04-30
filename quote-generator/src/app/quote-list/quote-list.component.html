@@ -1,11 +1,26 @@
-<!-- <p>quote-list works!</p> -->
-
-
 <ul class="quote-list">
-  <h1  onload="loadPosts();">List of Quotes</h1>
-  
-  <button (click)="loadPosts()">Quote Meeeeeeeee!</button>
-  <h1>{{msg}}</h1>
-  
-  <!-- Add more quotes similarly -->
+  <h1>List of Quotes</h1>
+  <div *ngIf="msg; else loading">
+      <ng-container *ngFor="let quote of quoteList">
+          <div class="quote-text">{{ quote.quote }}</div>
+          <div class="author-text">{{ quote.author }}</div>
+          <div class="topic-text">{{ quote.topic }}</div>
+          <hr> <!-- Optional: Add a horizontal line between quotes -->
+      </ng-container>
+  </div>
+  <ng-template #loading>
+      <p>Loading quotes...</p>
+  </ng-template>
 </ul>
+
+
+<!--
+<ul class="quote-list">
+  <h1>List of Quotes</h1>
+  <div *ngIf="msg; else loading">
+      <pre>{{ msg }}</pre>
+  </div>
+  <ng-template #loading>
+      <p>Loading quotes...</p>
+  </ng-template>
+</ul> -->

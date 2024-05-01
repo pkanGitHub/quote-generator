@@ -26,7 +26,7 @@ export class ProfileCardComponent {
       imageUrl: 'assets/Phyllis.jpg',
       bio: 'is a senior in Information Technology at University of Missouri. She graduated from a coding bootcamp for software engineering prior going to Mizzou. She recently find interest in cyber security and looking to learn more about it. Her goal is to live in a stable place with her furry friends and works at the place she enjoys.'
     },
-    { name: 'Michael Sturm', imageUrl: 'assets/Michael.png', bio: 'is in Information Technology major at Mizzou. He is interest in Nicehe programming topics.' },
+    { name: 'Michael Sturm', imageUrl: 'assets/Michael.png', bio: 'is an IT junior at mizzou failing to learn basic graphics programming and Godot shaders. He is falling in love with gamedev youtube and using professors as a means to combine his art hobby with coding.' },
     { name: 'Upasana Roy', imageUrl: 'assets/Upasana.jpg', bio: 'is a Computer Science Masters at Mizzou with an interest in harnessing the power of AI in material and chemical sciences.' },
   ];
 

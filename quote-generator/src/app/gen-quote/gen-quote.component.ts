@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { QuoteGetterServicee } from '../quote-getter.service';
-import { Output, EventEmitter, inject, OnInit } from '@angular/core';
-import queryString from 'querystring';
+import { inject} from '@angular/core';
 
 
 @Component({
@@ -11,12 +10,11 @@ import queryString from 'querystring';
 })
 //let msg;
 export class GenQuoteComponent {
-  msg;
+
   randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   
-  //constructor() {}
   onClick() {
     console.log('Button clicked');
     
@@ -25,30 +23,28 @@ export class GenQuoteComponent {
     const rndInt = this.randomIntFromInterval(1, 33);
     return rndInt;
   }
+
   private quoteGetter = inject(QuoteGetterServicee)
+  
+  // add default message
+  quote: string = "Click Here For A Random Quote!";
+  author: string = "Author";
+  topic: string = "Topic";
   
   loadPosts(){
     this.quoteGetter.getPosts().subscribe({
       next: (posts : string) => {
-       console.log()
-       const RandNum = this.randomIntFromInterval(0 ,posts[0].length-1)
-       const realposts = JSON.stringify(posts[0][RandNum])
-       const Postquote =JSON.stringify(posts[0][RandNum])
-       const turnback = JSON.parse(Postquote)
+        console.log()
+        const RandNum = this.randomIntFromInterval(0 ,posts[0].length-1)
+        const Postquote =JSON.stringify(posts[0][RandNum])
+        const turnback = JSON.parse(Postquote)
        
-       
-        this.msg = turnback.quote + " Author:" + turnback.author + " Topic:" + turnback.topic
-        
+        this.quote = turnback.quote 
+        this.author =  turnback.author
+        this.topic = turnback.topic
         
       },
      error: (error) => console.log('Error fetching posts', error)
     })
   }
-  yourmom() {
-    this.msg = "yourmom";
-    //console.log("PLEASEEEEE")
-    ///this.quoteGetter
-    return this.msg;
-  }
-  
 }

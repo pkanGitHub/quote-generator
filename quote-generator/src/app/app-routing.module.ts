@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AddQuoteComponent } from './add-quote/add-quote.component';
 import { GenQuoteComponent } from './gen-quote/gen-quote.component';
